@@ -113,3 +113,16 @@
       width: 100%;
     }
 
+    main{
+      display: flex;
+    }
+
+    main > section{
+      background: rgba(255, 255, 255, 0.5);
+      margin: 10px;
+      padding: 15px;
+      font-weight: bold;
+      color: #333;
+      text-transform: capitalize;
+    }
+
