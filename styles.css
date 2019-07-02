@@ -22,11 +22,11 @@
     }
 
     p{
-      font-size: 0.75rem
+      font-size: 0.75rem;
     }
 
     figure{
-      margin: 25px: auto;
+      margin: 25px auto;
       text-align: center;
       width: 100px;
       /* height: 144px; */
@@ -34,7 +34,7 @@
 
     img{
       max-height: 500px;
-      margin: 5: auto;
+      margin: 5 auto;
       width: 100vw;
     }
 
@@ -124,5 +124,21 @@
       font-weight: bold;
       color: #333;
       text-transform: capitalize;
+    }
+
+    .cta-btn{
+      background: yellow;
+      display: inline-block;
+      margin: 10px;
+      border-radius: 100%;
+      padding: 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .cta-btn:focus,
+    .cta-btn:hover{
+      background: greenyellow;
+      transform: translate(-1px);
     }
 
