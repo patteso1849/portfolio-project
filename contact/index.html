@@ -6,8 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
     <title>Contact Me</title>
@@ -34,14 +39,59 @@
 
 
   <main>
-      <p>The apartment was littered with books and towels. From one of those cum ridden goo cloths was birthed a child. He erupted from the laundry been a fully formed baby man. When his single father arrived home he was flabbergasted.
+      <!--
+      The action attribute defines where on the server the form data should be sent
+      The method attribute specifies the HTTP method (GET or POST)
+    -->
 
-          "A child, in this my home."
+    <form action="form-responses/new" method="POST">
 
-          For a second he thought that someone must have broken in and left a baby in my apartment. But there were no signs of forced entry. And who the fuck just leaves a random ass baby in someones house. He then realized that the child was birthed from one of his jack off towels drenched in his man goo.
+      <!-- Developer's Note: 'placeholder' without using `<label>` is NOT RECOMMENDED for accessibility purposes. -->
+        <input type="text" name="firstname" value="First Name" size="100" autofocus />
+        <input type="text" name="lastname" value="Last Name" size="100" />
+        <input type="email" name="userEmail" placeholder="your.email@example.com" />
 
-          Finally there was proof of the Antiabortion activists claim of life. Anything the seiman touches will become a baby. The gestation is a few weeks. Masturbation must be made illegal.
-          !</p>
+        <p>What's this message about?</p>
+
+        <div>
+          <input type="radio" name="subject" value="professional" id="pro" checked />
+          <label for="pro">I'd like to hire you!</label>
+        </div>
+
+        <div>
+          <input type="radio" name="subject" value="personal" id="personal" />
+          <label for="personal">Personal message</label>
+        </div>
+        <div>
+          <input type="radio" name="subject" value="other" />
+          <label>Don't know/something else</label>
+        </div>
+
+        <input type="checkbox" name="optin" value="trusting" checked />Subscribe me to
+        your newsletter!
+        <input type="checkbox" name="optout" value="skeptical" disabled />Cheeky
+        checkbox...
+
+        <label for="marketing">How did you hear about me?</label>
+        <select name="marketing">
+          <optgroup label="Online">
+            <option value="social">Social Media (FB, Twitter, LinkedIn)</option>
+            <option value="github">Online Portfolio (GitHub)</option>
+            <option value="search">Search Engine</option>
+            <option value="email">Email</option>
+          </optgroup>
+          <optgroup label="In-Person">
+            <option value="networking">We met at a networking event</option>
+            <option value="referral">Personal referral</option>
+            <option value="random">We met somewhere else</option>
+          </optgroup>
+          <option value="other">Other</option>
+        </select>
+
+        <textarea name="user_message" rows="8" cols="40"></textarea>
+        <input type="submit" />
+      </form>
+
   </main>
 </body>
 </html>
