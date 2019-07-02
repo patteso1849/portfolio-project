@@ -1,14 +1,14 @@
   body {
-    background: rgb(0, 0, 0);
-    color: rgb(66, 189, 107);
+    background: rgb(120, 174, 224);
+    color: rgb(45, 49, 46);
     font-family: 'Noto Sans HK', sans-serif;
     font-size: 16px;
+    text-align: center;
     }
 
-    section{
-      font-size: 16px;
+    li{
+      list-style-type: none;
     }
-
 
   h1 {
     color: red;
@@ -26,7 +26,7 @@
     }
 
     figure{
-      margin: 50px;
+      margin: 25px: auto;
       text-align: center;
       width: 100px;
       /* height: 144px; */
@@ -34,6 +34,49 @@
 
     img{
       max-height: 500px;
-      margin: 25; auto;
+      margin: 5: auto;
       width: 100vw;
     }
+
+    figcaption{
+      text-align: center;
+    }
+
+    section{
+      font-size: 16px;
+    }
+
+    /* Navigation */
+
+    nav ul{
+
+    }
+
+    li{
+      padding: 0;
+    }
+
+    nav > ul{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    /* The flex rule makes the text horizontal */
+
+    .dropdown ul{
+      background: white;
+      border-radius: 0 0 3px 3px;
+      display: none;
+      position: absolute;
+      padding: 8px;
+      margin: 1px;
+    }
+
+    .dropdown:hover ul,
+    .dropdown:hover ul{
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Generally focus goes with hover state to help with accessibility. */
+
+
