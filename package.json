@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/patteso1849/portfolio-project/issues"
   },
-  "homepage": "https://github.com/patteso1849/portfolio-project#readme"
+  "homepage": "https://github.com/patteso1849/portfolio-project#readme",
+  "dependencies": {}
 }
