@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      footer,
+      nav {
+        display: flex;
+        align-items: center;
+      }
+      ul {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      li {
+        list-style: none;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:
+          minmax(80px, auto)
+          minmax(60px, auto)
+          minmax(16px, auto)
+          minmax(100px, auto)
+          repeat(2, minmax(80px, auto));
+        grid-gap: 1px;
+        grid-template-areas:
+          "header"
+          "navigation"
+          "main"
+          "aside-1"
+          "aside-2"
+          "footer";
+        height: 100vh;
+      }
+      nav,
+      header,
+      main,
+      aside,
+      footer {
+        border: solid thin black;
+      }
+      main,
+      aside {
+        padding: 0 10px;
+      }
+      nav {
+        background: red;
+        grid-area: navigation;
+      }
+      header {
+        background: green;
+        grid-area: header;
+      }
+      main {
+        background: blue;
+        color: white;
+        grid-area: main;
+      }
+      aside:first-of-type {
+        background: yellow;
+        grid-area: aside-1;
+      }
+      aside:nth-of-type(2) {
+        background: violet;
+        grid-area: aside-2;
+      }
+      footer {
+        background: indigo;
+        color: white;
+        grid-area: footer;
+      }
+      @media screen and (min-width: 476px) {
+        .container {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows:
+            repeat(2, minmax(120px, auto))
+            repeat(2, minmax(180px, auto))
+            repeat(2, minmax(80px, auto));
+          grid-template-areas:
+            "header header"
+            "navigation navigation"
+            "main main"
+            "aside-1 aside-2"
+            "aside-1 aside-2"
+            "footer footer";
+        }
+      }
+      @media screen and (min-width: 786px) {
+        .container {
+          grid-template-columns: 3fr 1fr;
+          grid-template-rows:
+            repeat(2, minmax(60px, auto))
+            repeat(2, minmax(300px, auto))
+            repeat(2, minmax(80px, auto));
+          grid-template-areas:
+            "header header"
+            "navigation aside-1"
+            "main aside-1"
+            "aside-2 aside-1"
+            "footer footer";
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>link1</li>
+          <li>link2</li>
+          <li>link3</li>
+          <li>link4</li>
+          <li>link5</li>
+        </ul>
+      </nav>
+      <header>
+        <h1>This is a heading!</h1>
+        <h2>This is a subheading!</h2>
+      </header>
+      <aside>
+        <p>
+          BTW, this is an aside. It's loosely related to the 'main' content, but
+          not exactly. However, it doesn't stand on its own, so it can't be an
+          'article'.
+        </p>
+      </aside>
+      <main>
+        <h2>Finally, Main Stuff!</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
+          ullam cupiditate, et atque soluta eaque nobis, quasi rerum illum iusto
+          veritatis maiores rem reiciendis quaerat minus velit, hic aspernatur.
+          Reiciendis.
+        </p>
+      </main>
+      <aside>
+        <p>BTW, here's some more 'aside' information!</p>
+      </aside>
+      <footer class="semantic-grid-section demo-footer">
+        <ul>
+          <li>&copy;2019</li>
+          <li>link1</li>
+          <li>link2</li>
+          <li>link3</li>
+          <li>link4</li>
+          <li>link5</li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
