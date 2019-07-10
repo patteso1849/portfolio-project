@@ -7,5 +7,24 @@
   4.Select the <h1> on the page.
   5. Replace the value of the <h1> tag.
 */
+
 const name = prompt('What is your name?');
-console.log(name);
+const h1 = document.querySelector('h1')
+
+console.log('hello!')
+
+h1.textContent = `Hello, $(name)`;
+
+document.querySelector('h1').textContent = 'Hello, $(name)';
+
+// console.log(name);
+
+
+
+// const firstGreeting ="Hello";
+// const name = "John";
+// const fullGreeting = `${firstGreeting} ${name} is the assignment`;
+
+
+// console.log(fullGreeting);
+
