@@ -142,14 +142,20 @@
       transform: translate(-1px);
     }
 
+    form.contacts{
+      max-width: 400px;
+      flex-flow: column;
+      padding: 2%; ruby-align: center;
+      text-align: left;
+      border-block-color: green;
+      flex-wrap: wrap;
+      grid-auto-flow: column;
+      flex-shrink: inherit;
+      margin-block: center;
+      margin: 80%: 80%: 80%: 80%;
 
+    }
 
-
-
-
-
-
-
-
-
-
+    form.input{
+      padding: 350%;
+    }
