@@ -14,18 +14,6 @@
 const name = prompt('What is your name?');
 console.log('name has value of:', name);
 
-const x = 3;
-
-if( x === 3){
-  console.log('hello form if statement')
-};
-else if(x === 5){
-  console.log('x was nnot equal to 3 but is equal to 5xs')
-}
-else{
-  console.log('x was not equal to 3 or 5')
-};
-
 const h1 = document.querySelector('h1');
 
 console.log('hello!');
