@@ -11,13 +11,13 @@
   5. Replace the value of the <h1> tag.
 */
 
-const name = prompt('What is your name?');
-console.log('name has value of:', name);
+let fname = prompt('What is ur first name?');
+let lname = prompt('What is ur last name?');
 
-const h1 = document.querySelector('h1');
+while(!fname || !lname) {
+  fname = prompt('What is ur first name?');
+  lname = prompt('What is ur last name?');
 
-console.log('hello!');
+}
 
-h1.textContent = `Hello, (name)`;
-
-document.querySelector('h1').textContent = 'Hello, &(name)';
+document.querySelector('#greeting').innerHTML = '<p>Hello, ${fname} ${lname}</p>';
