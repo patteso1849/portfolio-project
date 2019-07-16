@@ -17,5 +17,9 @@
     "url": "https://github.com/patteso1849/portfolio-project/issues"
   },
   "homepage": "https://github.com/patteso1849/portfolio-project#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "parcel-bundler": "^1.12.3"
+  }
 }
