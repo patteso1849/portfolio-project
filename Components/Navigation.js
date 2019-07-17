@@ -1,5 +1,5 @@
 export default function(state){
-  return `
+    return `
   <nav>
   <ul>
     <li><a href="#">Home</a></li>
@@ -17,5 +17,5 @@ export default function(state){
     </li>
   </ul>
 </nav>
-';
+`;
 }
