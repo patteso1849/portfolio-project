@@ -3,7 +3,6 @@ export default function(state){
   <nav>
   <ul>
     <li><a href="#">Home</a></li>
-    <!--<a href> is an attribute-->
     <li><a href="About/">About</a></li>
     <li><a href="Contact/">Contact</a></li>
 
