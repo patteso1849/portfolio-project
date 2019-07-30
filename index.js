@@ -25,23 +25,21 @@ ${Header(state)}
 ${Main(state)}
 ${Footer(state)}
 `;
+
+    const navItems = document.querySelectorAll('nav > ul > li:not(.dropdown)');
+
+    navItems.forEach(function eventListenAdder(navItem){
+        navItem.addEventListener('click', function(event){
+            event.preventDefault();
+
+            render(states[event.target.textContent.toLowerCase()]);
+        });
+    });
 }
+
 
 render(states.home);
 
-const navItems = document.querySelectorAll('nav > ul > li:not(.dropdown)');
-
-console.log(navItems);
-
-
-navItems.forEach(function eventListenAdder(navItem){
-    navItem.addEventListener('click' , function(event){
-        event.preventDefault();
-
-
-        console.log(event.target.textContent);
-    });
-});
 
 // let i = 0;
 // TODO: Refactor this loop structure.
