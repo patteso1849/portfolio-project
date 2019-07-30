@@ -4,7 +4,8 @@
   "description": "## This is an even smaller header",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "parcel index.html",
+    "build": "npx parcel index.html && cp _redirects ./dist/"
   },
   "repository": {
     "type": "git",
