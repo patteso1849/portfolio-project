@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "parcel index.html",
-    "build": "npx parcel index.html && cp _redirects ./dist/"
+    "build": "parcel build index.html && cp _redirects ./dist/"
   },
   "repository": {
     "type": "git",
