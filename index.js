@@ -2,12 +2,10 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-imoport Footer from './components/blog';
 
-imoport Navigo from 'Navigo';
+import Navigo from 'navigo'; 8.8K (gzipped: 3K)
 
 const router = new Navigo(location.origin);
-
 
 
 const states = {
@@ -25,8 +23,8 @@ const states = {
     }
 };
 
-const store = {-
-};
+// const store = {-
+// };
 
 
 function render(state){
