@@ -1,8 +1,14 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Main from './components/Main';
-import Footer from './components/Footer';rt
-imoport rooter from './components/blog';
+import Footer from './components/Footer';
+imoport Footer from './components/blog';
+
+imoport Navigo from 'Navigo';
+
+const router = new Navigo(location.origin);
+
+
 
 const states = {
     'home': {
@@ -17,6 +23,9 @@ const states = {
     'blog': {
         'title': 'Blog Page'
     }
+};
+
+const store = {-
 };
 
 
