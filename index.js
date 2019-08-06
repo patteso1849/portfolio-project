@@ -37,6 +37,10 @@ ${Main(state)}
 ${Footer(state)}
 `;
 
+
+
+router
+
     const navItems = document.querySelectorAll('nav > ul > li:not(.dropdown)');
 
     navItems.forEach(function eventListenAdder(navItem){
@@ -51,6 +55,22 @@ ${Footer(state)}
 
 render(states.home);
 
+
+
+router
+    .on('/', function routerFxn(){
+        console.log('hello home page!');
+    })
+    .resolve();
+
+router
+    .on(':page', function handleParams(params){
+        console.log(params.page);
+    })
+    .on('/', function resolver(){
+        console.log('hello home page!');
+    })
+    .resolve();
 
 // let i = 0;
 // TODO: Refactor this loop structure.

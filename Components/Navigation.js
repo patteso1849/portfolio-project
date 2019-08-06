@@ -1,20 +1,30 @@
+function linkBuilder(links){
+    // const linkHTML = links.map(function linkLister(link){
+    //     return `<li>${link}</li>`;
+    // });
+
+    // return linkHTML.join(' ');
+    return links
+        .map(function linkLister(link){
+            return `<li><a href="/${link.toLowerCase()}" data-navigo>${link}</a></li>`;
+        })
+        .join(' ');
+}
+
+
 export default function(state){
     return `
-  <nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="About/">About</a></li>
-    <li><a href="Contact/">Contact</a></li>
-
-    <li class="dropdown">
-      Portfolio
-      <ul>
-        <li><a href="#">Project 1</a></li>
-        <li><a href="#">Project 2</a></li>
-        <li><a href="#">Project 3</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav>
+    <ul>
+        ${linkBuilder(state.links.primary)}
+      <li class="dropdown">
+        Portfolio
+        <ul>
+          ${linkBuilder(state.links.dropdown)}
+        </ul>
+      </li>
+    </ul>
+  </nav>
 `;
 }
+
