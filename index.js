@@ -1,17 +1,21 @@
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Main from './components/Main';
-import Footer from './components/Footer';
+import Footer from './components/Footer';rt
+imoport rooter from './components/blog';
 
 const states = {
     'home': {
-        'title': 'This is the page Title!'
+        'title': 'Home'
     },
     'about': {
         'title': 'About Page'
     },
     'contact': {
         'title': 'Contact'
+    },
+    'blog': {
+        'title': 'Blog Page'
     }
 };
 
