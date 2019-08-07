@@ -1,29 +1,28 @@
 {
-  "name": "RCPatterson",
+  "name": "portfolio-project",
   "version": "1.0.0",
-  "description": "## This is an even smaller header",
+  "description": "I am current teaching here at SavvyCoders. This is my *2nd* solo cohort.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "parcel index.html",
     "build": "parcel build index.html && cp _redirects ./dist/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/patteso1849/portfolio-project.git"
+    "url": "git+https://github.com/manavm1990/savvy-coders-portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/patteso1849/portfolio-project/issues"
+    "url": "https://github.com/manavm1990/savvy-coders-portfolio/issues"
   },
-  "homepage": "https://github.com/patteso1849/portfolio-project#readme",
+  "homepage": "https://github.com/manavm1990/savvy-coders-portfolio#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "parcel-bundler": "^1.12.3"
+  },
   "dependencies": {
     "navigo": "^7.1.2"
-  },
-  "devDependencies": {
-    "eslint": "^6.0.1",
-    "parcel-bundler": "^1.12.3"
   }
 }

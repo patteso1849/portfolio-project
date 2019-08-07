@@ -1,125 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../styles.css">
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact Me</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../styles.css" />
   </head>
 
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../About/">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <!--<a href> is an attribute-->
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="About/">About</a></li>
+        <li><a href="Contact/">Contact</a></li>
+        <li class="dropdown">
+          Portfolio
+          <ul>
+            <li><a href="">Project 1</a></li>
+            <li><a href="">Project 2</a></li>
+            <li><a href="">Project 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
+    <header>
+      <h1>Contact Me</h1>
+    </header>
 
-
-      <li class="dropdown">
-        Portfolio
-        <ul>
-          <li><a href="#">Project 1</a></li>
-          <li><a href="#">Project 2</a></li>
-          <li><a href="#">Project 3</a></li>
-        </ul>
-        <!-- To make a quick list just use this code ul>li*3, or something like that. -->
-      </li>
-    </ul>
-  </nav>
-<!-- npm install -g http-server0.9.0 -->
-      <header>
-        <!-- <figure>
-          <img
-          src="https://picsum.photos/2200/750.jpg"
-          <figcaption>This is the caption!</figcaption>
-        </figure> -->
-          <!-- <a href="https://irp-cdn.multiscreensite.com/ce0ec9f3/dms3rep/multi/mobile/Ben+Affleck+-+Website.jpg
-          "><img src="https://irp-cdn.multiscreensite.com/ce0ec9f3/dms3rep/multi/mobile/Ben+Affleck+-+Website.jpg"><a/> -->
-          <div>
-              <h1>Contact Me</h1>
-              <h2>My name is RC Patterson</h2>
-          </div>
-          <!-- This is my name -->
-      </header>
-
-
-  <main>
+    <main>
       <!--
-      The action attribute defines where on the server the form data should be sent
-      The method attribute specifies the HTTP method (GET or POST)
-    -->
+  The action attribute defines where on the server the form data should be sent
+  The method attribute specifies the HTTP method (GET or POST)
+-->
 
-    <form class="contacts" action="form-responses/new" method="POST">
-
-
-      <!-- Developer's Note: 'placeholder' without using `<label>` is NOT RECOMMENDED for accessibility purposes. -->
-        <input type="text" name="firstname" value="First Name" size="100" autofocus />
-        <input type="text" name="lastname" value="Last Name" size="100" />
-        <input type="email" name="userEmail" placeholder="your.email@example.com" />
+      <form action="form-responses/new" method="POST" netlify>
+        <!-- Developer's Note: 'placeholder' without using `<label>` is NOT RECOMMENDED for accessibility purposes. -->
+        <input
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          autofocus
+          required
+        />
+        <input type="text" name="lastname" placeholder="Last Name" />
+        <input
+          type="email"
+          name="userEmail"
+          placeholder="your.email@example.com"
+        />
 
         <p>What's this message about?</p>
 
-        <div>
-          <input type="radio" name="subject" value="professional" id="pro" checked />
-          <label for="pro">I'd like to hire you!</label>
+        <div class="input-group">
+          <span>
+            <!-- Generally, the 'for' attribute on <label> should match the 'id' of an <input>.
+          Radio button 'groups' need to have the same 'name' attribute value so that the server can properly interpret the results. -->
+            <input
+              type="radio"
+              name="subject"
+              value="professional"
+              id="pro"
+              checked
+            />
+            <label for="pro">I'd like to hire you!</label>
+          </span>
+
+          <span>
+            <input type="radio" name="subject" value="personal" id="personal" />
+            <label for="personal">Personal message</label>
+          </span>
+
+          <span>
+            <input type="radio" name="subject" value="other" />
+            <label>Don't know/something else</label>
+          </span>
         </div>
 
-        <div>
-          <input type="radio" name="subject" value="personal" id="personal" />
-          <label for="personal">Personal message</label>
+        <div class="input-group">
+          <input
+            type="checkbox"
+            name="optin"
+            value="trusting"
+            checked
+          />Subscribe me to your newsletter!
+          <input
+            type="checkbox"
+            name="optout"
+            value="skeptical"
+            disabled
+          />Cheeky checkbox...
         </div>
-        <div>
-          <input type="radio" name="subject" value="other" />
-          <label>Don't know/something else</label>
+
+        <div class="input-group input-group--flex">
+          <label for="marketing">How did you hear about me?</label>
+          <select name="marketing" id="marketing">
+            <optgroup label="Online">
+              <option value="social"
+                >Social Media (FB, Twitter, LinkedIn)</option
+              >
+              <option value="github">Online Portfolio (GitHub)</option>
+              <option value="search">Search Engine</option>
+              <option value="email">Email</option>
+            </optgroup>
+            <optgroup label="In-Person">
+              <option value="networking">We met at a networking event</option>
+              <option value="referral">Personal referral</option>
+              <option value="random">We met somewhere else</option>
+            </optgroup>
+            <option value="other">Other</option>
+          </select>
         </div>
 
-        <input type="checkbox" name="optin" value="trusting" checked />Subscribe me to
-        your newsletter!
-        <input type="checkbox" name="optout" value="skeptical" disabled />Cheeky
-        checkbox...
-
-        <label for="marketing">How did you hear about me?</label>
-        <select name="marketing">
-          <optgroup label="Online">
-            <option value="social">Social Media (FB, Twitter, LinkedIn)</option>
-            <option value="github">Online Portfolio (GitHub)</option>
-            <option value="search">Search Engine</option>
-            <option value="email">Email</option>
-          </optgroup>
-          <optgroup label="In-Person">
-            <option value="networking">We met at a networking event</option>
-            <option value="referral">Personal referral</option>
-            <option value="random">We met somewhere else</option>
-          </optgroup>
-          <option value="other">Other</option>
-        </select>
-
-        <textarea name="user_message" rows="8" cols="40"></textarea>
-        <input type="submit" />
+        <div class="input-group--flex">
+          <textarea name="user_message" rows="8" cols="40"></textarea>
+          <div>
+            <input type="submit" />
+            <input type="reset" value="Reset" />
+          </div>
+        </div>
       </form>
     </main>
-    <footer>
-      <span>
 
-      </span>
-    </footer>
-
-  <script src="./scripts.js"></script>
-
-</body>
+    <footer></footer>
+  </body>
 </html>
