@@ -1,13 +1,23 @@
-export default function(state){
-    return `
-<footer>
-<!--<a href="https://www.amazon.com/Black-Lives-Splatter-RC-Patterson/dp/1530056004" target="_blank"><img src="https://images-na.ssl-images-amazon.com/images/I/518oaR7DHSL._AC_SX60_CR,0,0,60,60_.jpg">
-<span class="fab fa-github"></span>-->
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
-</footer>
+export default () => `
+    <footer>
+      <address>
+        <ul>
+          <li>
+            <a href="https://github.com/manavm1990" target="_blank">
+              <span class="fab fa-github-square"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/manavm1990/" target="_blank">
+              <span class="fab fa-linkedin"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com/gocodefinity" target="_blank">
+              <span class="fab fa-twitter"></span>
+            </a>
+          </li>
+        </ul>
+      </address>
+    </footer>
 `;
-}
