@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 
 // Import the Navigo constructor fxn. from the node module called 'navigo.'
 import Navigo from 'navigo';
+import axios from 'axios';
 
 /**
  * location.origin provides the 'base' URL for Navigo to get started.
@@ -158,8 +159,6 @@ const store = {
             'dropdown': [ 'Project 1', 'Project 2', 'Project 3' ]
         },
         'title': 'Blog Page',
-
-        // TODO: 'page' will be updated after we fetch the data for the blog post.
         'page': `
         <p>Loading blog posts!</p>
         `
@@ -198,3 +197,21 @@ router
         render(store[params.view]);
     })
     .resolve();
+
+axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
+    const blogPosts = response.data;
+
+    // blogPosts is an `Array` of Object Literals
+    const blogHTML = blogPosts
+        .map(
+            (blogPost) => `
+          <section>
+          <h2>${blogPost.title}</h2>
+          <p>${blogPost.body}</p>
+          </section>
+        `
+        )
+        .join(' ');
+
+    store.blog.page = blogHTML;
+});
