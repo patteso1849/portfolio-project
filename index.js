@@ -15,6 +15,7 @@ import axios from 'axios';
 const router = new Navigo(location.origin);
 
 // Describes the current STATE of our SPA. We say that we pass 'pieces of state.'
+// TODO: Refactor 'store' into its own folder and `import`
 const store = {
     'home': {
         'links': {
@@ -23,16 +24,16 @@ const store = {
         },
         'title': 'This is the home page!',
         'page': `
-      <section>
+        <section>
         <h2>Hyacinth Flood</h2>
         <p> “You ready?” She asked. <br>
             "Yeah, let’s go.” I said. <br>
             Even though all she had on was a loose T-shirt, sweat pants and a beat up pair of sneakers, she still radiated, a star in cotton clothes. Her eyes, her smile, her energy was all encompassing.
             <p>None of this bothers us because we see children playing basketball in the park, an entrepreneur is selling barbeque on the lot of a chop suey restaurant. Old men are talking and laughing.</p>
             <a href="#"class="cta-btn">Read More!</a>
-      </section>
+        </section>
 
-      <section>
+        <section>
           <h2>Choke Slam Journalism</h2>
           <p>Journalists are getting assaulted to get the story. Benjamin Jacobs of the Guardian gets body slammed and punched by literal anus Greg Gianforte.
           <p>After Jacobs asks Gianforte about the new health care bill, the conversation went delightfully like this,</p>
@@ -43,10 +44,8 @@ const store = {
             <h2>Ambrosial</h2>
             <p>Now reality is aggrandized beyond fantastic phantasms of fantasy, because he has ascertained pleasure more immense than the ambrosial halls of the immortals relaxed in the pleasure of eternal contemplation.</p>
             <p>And by the way, Hey Jenn!</p>
-            <a href="#"class="cta-btn">Read More!</a>
-          </section>
-        <a href="#" class="cta-btn">Read More!</a>
-      </section>`
+            <a href="#" class="cta-btn">Read More!</a>
+        </section>`
     },
     'about': {
         'links': {
@@ -158,7 +157,7 @@ const store = {
 };
 
 function render(state){
-
+    // We use function invocation that actually runs the fxn. and then `returns` the markup so that it is properly rendered in the browser.
     document.querySelector('#root').innerHTML = `
         ${Navigation(state)}
         ${Header(state)}
@@ -173,7 +172,17 @@ function render(state){
 // To render a page, we pass in a piece of state.
 render(store.home);
 
-
+/**
+ * .on is a Navigo method that behaves as any event listener might.
+ * It 'listens' to location.pathname and responds accordingly
+ *
+ * https://github.com/krasimir/navigo#parameterized-urls
+ *
+ * Whatever comes in as 'location.pathname',
+ * 'save' that in the 'params' object under the 🔑 'page.'
+ *
+ * resolve() is a 'navigo' method that triggers the 'routing' to happen using `on()`'s cb fxn. (https://www.npmjs.com/package/navigo#resolving-the-routes)
+ */
 router
     .on(':view', (params) => {
         render(store[params.view]);
