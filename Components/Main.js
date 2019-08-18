@@ -1,5 +1,4 @@
-export default function(state){
-    return `
+export default (state) => `
 <main>
   <section>
     <h2>Hyacinth Flood</h2>
@@ -26,4 +25,3 @@ export default function(state){
 
   </main>
 `;
-}
