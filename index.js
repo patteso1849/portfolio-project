@@ -15,7 +15,6 @@ import axios from 'axios';
 const router = new Navigo(location.origin);
 
 // Describes the current STATE of our SPA. We say that we pass 'pieces of state.'
-// TODO: Refactor 'store' into its own folder and `import`
 const store = {
     'home': {
         'links': {
@@ -24,7 +23,6 @@ const store = {
         },
         'title': 'This is the home page!',
         'page': `
-        <!-- Sections are like subtopics directly related to the general topic of the page. -->
       <section>
         <h2>This Is My Top Section</h2>
         <p>
@@ -166,7 +164,7 @@ const store = {
 };
 
 function render(state){
-    // We use function invocation that actually runs the fxn. and then `returns` the markup so that it is properly rendered in the browser.
+
     document.querySelector('#root').innerHTML = `
         ${Navigation(state)}
         ${Header(state)}
@@ -181,17 +179,7 @@ function render(state){
 // To render a page, we pass in a piece of state.
 render(store.home);
 
-/**
- * .on is a Navigo method that behaves as any event listener might.
- * It 'listens' to location.pathname and responds accordingly
- *
- * https://github.com/krasimir/navigo#parameterized-urls
- *
- * Whatever comes in as 'location.pathname',
- * 'save' that in the 'params' object under the 🔑 'page.'
- *
- * resolve() is a 'navigo' method that triggers the 'routing' to happen using `on()`'s cb fxn. (https://www.npmjs.com/package/navigo#resolving-the-routes)
- */
+
 router
     .on(':view', (params) => {
         render(store[params.view]);
