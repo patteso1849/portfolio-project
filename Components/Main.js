@@ -1,4 +1,4 @@
-export default (_state) => `
+export default (state) => state.page;`
 <main>
 <section>
 <h2>Hyacinth Flood</h2>
